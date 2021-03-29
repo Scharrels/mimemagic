@@ -33,8 +33,7 @@ desc "Build a file pointing at the database"
 task :default do
   mime_database_path = nil
   if ENV["USE_FREEDESKTOP_PLACEHOLDER"] == "true"
-    File.write("../../dummy.xml", "")
-    mime_database_path = File.expand_path("../../dummy.xml")
+    mime_database_path = "dummy.xml"
   else
     mime_database_path = locate_mime_database
   end
